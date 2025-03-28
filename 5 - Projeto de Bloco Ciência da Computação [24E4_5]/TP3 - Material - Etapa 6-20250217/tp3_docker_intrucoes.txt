@@ -1,0 +1,8 @@
+Instruções do arquivo docker para o fedora.
+1.	Alterar os diretórios dentro do arquivo docker
+2.	Construir a imagem:
+docker build -t tp3_docker .
+3.	Executar com o commando:
+docker run -it tp3_docker
+Quem estiver com o fedora configurado ou outro Sistema compatível pode executar os seus exercícios diretamente no sistema operacional.
+

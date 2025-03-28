@@ -1,0 +1,27 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY . .
+
+RUN apt-get update && apt-get install -y \
+    nmap \
+    tcpdump \
+    dsniff \
+    openssl \
+    libpcap-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir \
+    scapy \
+    dnspython
+
+RUN openssl req -x509 -newkey rsa:4096 \
+    -keyout /app/key.pem \
+    -out /app/cert.pem \
+    -days 365 -nodes \
+    -subj "/CN=localhost"
+
+RUN chmod +x /app/*.py
+
+CMD ["python3", "--version"]
