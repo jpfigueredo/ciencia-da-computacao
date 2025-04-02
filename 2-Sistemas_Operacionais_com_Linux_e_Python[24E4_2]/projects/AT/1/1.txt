@@ -1,0 +1,2 @@
+mkdir -p ~/dir-{1..5}/$(uname -r)-$((RANDOM % 100))
+tree ~/

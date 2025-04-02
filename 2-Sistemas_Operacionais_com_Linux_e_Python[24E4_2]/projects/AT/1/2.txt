@@ -1,0 +1,3 @@
+ls -la
+sudo chmod -R u=rwx,g=r,o= ~/dir-{1..5}
+ls -la

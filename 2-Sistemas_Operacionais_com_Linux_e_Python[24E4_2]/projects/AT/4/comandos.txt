@@ -1,0 +1,13 @@
+1.
+python3 processos.py &
+kill -SIGSTOP <PID>
+kill -SIGCONT <PID>
+kill -SIGTERM <PID>
+pkill -f python
+
+2.
+a) python3 bingo game.py
+
+3.
+python setup.py build_ext --inplace
+python find_bigger_in_parallel.py

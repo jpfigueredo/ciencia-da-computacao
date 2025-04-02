@@ -1,0 +1,23 @@
+1.
+cat /tmp/cat-system-calls.txt
+strace -e trace=all -o /tmp/cat-system-calls.txt cat /etc/passwd
+cat /tmp/cat-system-calls.txt
+
+2.
+sudo dd if=/dev/zero of=imagem-disco.img bs=1M count=256
+df -h
+
+3.
+sudo losetup -fP /mnt/imagem-disco.img
+sudo losetup -l
+sudo fdisk /dev/loop1
+
+4.
+sudo mkfs.ext4 /dev/loop1p1
+sudo mkdir /mnt/loop disk
+sudo mount -o ro /dev/loop1p1 /mnt/loop_disk
+sudo unmount /mnt/loop disk
+sudo mount -o ro /dev/loop1p1 /mnt/loop disk
+sudo lsblk
+sudo unmount /mnt/loop disk
+sudo lsblk

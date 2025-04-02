@@ -1,0 +1,14 @@
+# Arquitetura do processador
+lscpu | grep -E "Architecture" | tr -s ' ' | cut -d ' ' -f2 >>
+memoria-computador.txt
+# Modos operacionais da CPU
+lscpu | grep -E "CPU op-mode" | tr -s ' ' | cut -d ' ' -f3- >>
+memoria-computador.txt
+# Byte order
+lscpu | grep -E "Byte Order" | tr -s ' ' | cut -d ' ' -f3- >>
+memoria-computador.txt
+# Quantidade de CPUs
+lscpu | grep -E "^CPU(s):" | tr -s ' ' | cut -d ' ' -f2 >> memoriacomputador.txt
+# Família da CPU
+lscpu | grep -E "Model name" | tr -s ' ' | cut -d ' ' -f3- >>
+memoria-computador.txt

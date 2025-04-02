@@ -1,0 +1,28 @@
+1.
+vi hello-world.py
+docker build -t hello-ubuntu:1 .
+docker run hello-ubuntu:1
+
+2.
+	a)
+docker build -t hello-python:2 .
+docker run -it --rm -v $(pwd)/hello-world.py:/home/username/src/hello-world.py hellopython:2
+	b)
+docker tag hello-ubuntu:1 helloubuntu:1-modified
+docker tag hello-python:1 hellopython:1-modified
+docker rmi hello-ubuntu:1
+docker rmi hello-python:1
+
+3.
+sudo apt update
+sudo apt install nginx
+dpkg -l | grep nginx
+sudo systemctl enable nginx
+sudo systemctl status nginx
+sudo systemctl start nginx
+sudo systemctl status nginx
+curl localhost
+sudo systemctl stop nginx
+sudo systemctl disable nginx
+sudo apt remove nginx
+sudo apt autoremove

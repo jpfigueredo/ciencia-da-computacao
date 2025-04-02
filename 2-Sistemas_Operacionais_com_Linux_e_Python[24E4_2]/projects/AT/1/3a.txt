@@ -1,0 +1,4 @@
+df -h | awk '{print $1, $2}' | grep -v "Filesystem" > memoria-computador.txt
+cat memoria-computador.txt
+free -h | awk 'NR==2 {print $2, $3, $4, $7}' >> ~/memoria-computador.txt
+cat memoria-computador.txt
