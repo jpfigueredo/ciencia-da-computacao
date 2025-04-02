@@ -1,0 +1,4 @@
+/admin
+/login
+/api/v1
+/.git

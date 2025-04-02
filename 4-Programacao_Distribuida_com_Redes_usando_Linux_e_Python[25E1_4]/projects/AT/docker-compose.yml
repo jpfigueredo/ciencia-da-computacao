@@ -1,0 +1,28 @@
+services:  
+  database:  
+    image: postgres:14  
+    environment:  
+      POSTGRES_PASSWORD: senha_segura  
+    volumes:  
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql  
+    networks:  
+      rede_academica:  
+        ipv4_address: 192.168.100.20  
+
+  api:  
+    image: node:18
+    build: ./api
+    networks:  
+      rede_academica:  
+        ipv4_address: 192.168.100.30  
+    ports:  
+      - "3000:3000"  
+    depends_on:  
+      - database  
+
+networks:  
+  rede_academica:  
+    driver: bridge  
+    ipam:  
+      config:  
+        - subnet: 192.168.100.0/24  
